@@ -1,21 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navbar from './Navbar';
+import Home from './Home';
 function App() {
-  const title  =  'React native';
-  const msg = 'We are ready to learn';
-  const like = 50;
-  const msg2 = 'like avobe 50'
-  var fb = "https://facebook.com";
   return (
     <div className="App">
-      <h1>{title}</h1>
-      <h3>{msg}</h3>
-      <p>{Math.random()*100}</p>
-      <p>{[1,' ',2,' ',3,' ',4]}</p>
-      <a href={fb}>facebook</a>
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default App; 
