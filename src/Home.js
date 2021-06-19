@@ -27,8 +27,9 @@ function changeState()
 
             <p>{preValue}</p>
             <button onClick = {changeState}>count your click</button>
-
         </div>
+
+        
      );
 }
 export default Home;
