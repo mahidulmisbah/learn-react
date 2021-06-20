@@ -1,38 +1,22 @@
-import { useState } from "react";
+// Template for using any where in the project 
+// Learn how to use props
+
+import { useState } from "react"; 
+import BookList from "./bookList";  
 
 const DynamicTable = () => {
-    const [blogs, value] = useState([
-        {title: 'English', author: 'Misbah', id : '1'},
-        {title: 'Math', author: 'Mahidul', id : '2'},
-        {title: 'Science', author: 'Hridy', id : '3'}
+    const [blogs] = useState([
+        {title: 'Mara khao', author: 'Misbah',publishYear: 2019, id : '1'},
+        {title: 'khaite khaite shes', author: 'Kundu',publishYear: 2020, id : '2'},
+        {title: 'ami ar partesina', author: 'Pijush',publishYear: 2021, id : '3'}
     ]);
-    function ChangeTableValue()
-    {
-        value([{title: 'social science', author: 'Toha', id : '4'}]);
-    }
 
 
 
     return (
         <div className="tableDiv">
             <div className="blog-preview" >
-                <table className="table" >
-                    <tr className = "table-row">
-                            <th className = "table-td">Title</th>
-                            <th className = "table-td">Author</th>
-                    </tr>
-
-                    {blogs.map((blog) =>(
-                    
-                        <tr className = "table-row" key ={blog.id}>
-                            <td className = "table-td">{blog.title}</td>
-                            <td className = "table-td">{blog.author}</td>
-                        </tr>
-                    ))}
-                </table>
-            </div>
-            <div className="btn">
-                <button onClick = {ChangeTableValue}>Click to change</button>
+                <BookList blogs = {blogs} message  = "See the book list" />
             </div>
         </div>
      );

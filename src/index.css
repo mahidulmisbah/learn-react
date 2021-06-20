@@ -18,15 +18,19 @@
   color: #f1356d;
 }
 .navbar .links {
-  margin-left: auto;
+  position: absolute;
+  right: 0px;
 }
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+  color: white;
+  background-color: #f1356d;
+  border-radius: 8px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  background-color: #5e35f1;
 }
 .content {
   max-width: 600px;
@@ -35,8 +39,12 @@
 }
 
 .tableDiv{
+  position: absolute;
+  right: 50%;
+  margin-left: auto;
+  margin-right: auto;
   width: 310px;
-  height: 265px;
+  height: 225px;
   margin: 5px;
   padding: 5px;
   border: 1px solid green;
