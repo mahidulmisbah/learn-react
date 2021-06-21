@@ -1,7 +1,7 @@
 // Template for using any where in the project 
 // Learn how to use props
 
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 import BookList from "./bookList";  
 
 const DynamicTable = () => {
@@ -11,13 +11,17 @@ const DynamicTable = () => {
         {title: 'ami ar partesina', author: 'Pijush',publishYear: 2021, id : '3'}
     ]);
 
+    const [name,setName] = useState("mario"); // setName by useState -  
 
+    useEffect( ()=> {
+        console.log("Learn Use effect- A auto call fucntion in every rendering");
+        console.log(name);
+    },[name]);
 
     return (
         <div className="tableDiv">
-            <div className="blog-preview" >
-                <BookList blogs = {blogs} message  = "See the book list" />
-            </div>
+            <BookList blogs = {blogs} message  = "See the book list" />
+            <button onClick ={()=> setName("hei")}>Change name</button>
         </div>
      );
 }
