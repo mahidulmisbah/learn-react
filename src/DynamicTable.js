@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react"; 
 import BookListTemplate from "./bookListTemplate";  
 
+
 const DynamicTable = () => {
     const [blogs,newList] = useState([
         {title: 'Mara khao', author: 'Misbah',publishYear: 2019, id : '1'},
@@ -27,10 +28,8 @@ const DynamicTable = () => {
     return (
   
         <div className="tableDiv">
-
             <BookListTemplate blogs = {blogs} message  = "See the book list" handleDelete={DeleteRow} />
             <button onClick ={()=> setName("hei")}>Change name</button>
-             
         </div>
      );
 }
