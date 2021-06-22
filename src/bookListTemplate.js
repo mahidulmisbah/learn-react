@@ -1,17 +1,16 @@
-const BookList = (props) => {
-    const blogs = props.blogs;
-    const message = props.message;
+const BookListTemplate = ({blogs,message,handleDelete}) => {
 
     return ( 
         <div className="bookList">
             <p>{message}</p>
             <table className="table" >
-                    <tr className = "table-row">
+                    <thead className = "table-row">
                             <th className = "table-td">Title</th>
                             <th className = "table-td">Author</th>
                             <th className = "table-td">Publishing Year</th>
+                            <th className = "table-td">Delete Option</th>
                             
-                    </tr>
+                    </thead>
 
                     {blogs.map((blog) =>(
                     
@@ -19,6 +18,9 @@ const BookList = (props) => {
                             <td className = "table-td">{blog.title}</td>
                             <td className = "table-td">{blog.author}</td>
                             <td className = "table-td">{blog.publishYear}</td>
+                            <td className = "table-td">
+                                <button className = "table-td-btn" onClick ={()=>handleDelete(blog.id)}>Delete This Row</button>
+                            </td>
                         </tr>
                     ))}
                 </table>
@@ -26,4 +28,4 @@ const BookList = (props) => {
      );
 }
  
-export default BookList;
+export default BookListTemplate;
