@@ -1,8 +1,10 @@
 // Template for using any where in the project 
 // Learn how to use props
 
+
 import { useState } from "react"; 
 import BookListTemplate from "./bookListTemplate";  
+
 
 const DynamicTable = () => {
     const [blogs,newList] = useState([
@@ -14,10 +16,12 @@ const DynamicTable = () => {
         const setNewList = blogs.filter(blog => blog.id !==id);
         newList(setNewList);
     }
+
     return (
   
         <div className="tableDiv">
              <BookListTemplate blogs = {blogs} message  = "See the book list" handleDelete={DeleteRow} />
+
         </div>
      );
 }
